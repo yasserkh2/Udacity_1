@@ -1,3 +1,14 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# */AIPND-revision/intropyproject-classify-pet-images/classifier.py
+#                                                                             
+# PROGRAMMER: Yasser Khira
+# DATE CREATED: 04/27/2025
+# REVISED DATE: 
+# PURPOSE: Create a function that uses the classifier function to classify
+#          images and handles different versions of PyTorch appropriately.
+#
+##
 import ast
 from PIL import Image
 import torchvision.transforms as transforms
@@ -33,8 +44,7 @@ def classifier(img_path, model_name):
     # resize the tensor (add dimension for batch)
     img_tensor.unsqueeze_(0)
     
-    # wrap input in variable, wrap input in variable - no longer needed for
-    # v 0.4 & higher code changed 04/26/2018 by Jennifer S. to handle PyTorch upgrade
+    # Get PyTorch version
     pytorch_ver = __version__.split('.')
     
     # pytorch versions 0.4 & hihger - Variable depreciated so that it returns
